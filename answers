@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+#
+# Print answers for practicing times tables
+#
+use warnings;
+use strict;
+
+my (@tab);
+
+my $max = 12;
+$max = shift if @ARGV;
+die "Usage: $0 NUMBER\n" if $max !~ /^\d+$/;
+
+for my $a ( 1 .. $max ) {
+
+    for my $b ( 1 .. $max ) {
+
+        printf "%3d ", $a * $b;
+
+    }
+    print $/;
+
+}
+
