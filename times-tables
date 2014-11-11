@@ -7,9 +7,13 @@ use strict;
 
 my (@tab);
 
-for my $a ( 1 .. 12 ) {
+my $max = 12;
+$max = shift if @ARGV;
+die "Usage: $0 NUMBER\n" if $max !~ /^\d+$/;
 
-    for my $b ( 1 .. 12 ) {
+for my $a ( 1 .. $max ) {
+
+    for my $b ( 1 .. $max ) {
 
         push @tab, sprintf "%2dx%-2d", $a, $b;
 
@@ -17,9 +21,9 @@ for my $a ( 1 .. 12 ) {
 
 }
 
-for my $a ( 1 .. 12 ) {
+for my $a ( 1 .. $max ) {
 
-    for my $b ( 1 .. 12 ) {
+    for my $b ( 1 .. $max ) {
 
         printf " %s", splice @tab, int(rand($#tab+1)), 1;
 
