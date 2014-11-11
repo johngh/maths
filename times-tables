@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+#
+# Print random table for practicing times tables
+#
+use warnings;
+use strict;
+
+my (@tab);
+
+for my $a ( 1 .. 12 ) {
+
+    for my $b ( 1 .. 12 ) {
+
+        push @tab, sprintf "%2dx%-2d", $a, $b;
+
+    }
+
+}
+
+for my $a ( 1 .. 12 ) {
+
+    for my $b ( 1 .. 12 ) {
+
+        printf " %s", splice @tab, int(rand($#tab+1)), 1;
+
+    }
+
+    print $/;
+
+}
+
