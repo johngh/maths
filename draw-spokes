@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+use Math::Trig;
+
+my $center_x = 250;
+my $center_y = 250;
+my $radius = 110;
+
+my $count = shift;
+die "Usage: $0 NUMBER_OF_SPOKES\n" if ! $count;
+
+my $seg_ang = 360 / $count;
+
+for ( my $angle = 0 ; $angle < 360; $angle += $seg_ang ) {
+
+    my $x = cos( deg2rad ( $angle -90 ) ) * $radius + $center_x;
+    my $y = sin( deg2rad ( $angle -90 ) ) * $radius + $center_y;
+
+    printf qq~<line x1="%d" y1="%d" x2="%1.0f" y2="%1.0f" stroke="black" stroke-width="1" />\n~, $center_x, $center_y, $x, $y;
+
+}
+
