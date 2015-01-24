@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+#
+#
+#
+use warnings;
+use strict;
+use Getopt::Long;
+
+my $opt;
+
+GetOptions (
+    "zero"    => \$opt->{zero},
+    "2"       => \$opt->{2},
+    "count"   => \$opt->{count},
+    "help"    => \$opt->{usage},
+    "usage"   => \$opt->{usage},
+)
+or die("\$0: ERROR: invalid command line arguments\n");
+
+sub usage () {
+
+    die <<EOT;
+Usage: \$0 [-usage] [-verbose] ARGUMENT
+  where
+    -zero    - start at 0 instead of 1
+    -2       - 2 digits with leading 0 instead of space
+    -count   - count in hex instead of times table
+    -help    - show this help
+    -verbose - show verbose output
+EOT
+
+}
+usage if $opt->{usage};
+
+my $start = 1;
+$start = 0 if $opt->{zero};
+$start = 0 if $opt->{count};
+
+for my $a ( $start .. 0xf ) {
+    for my $b ( $start .. 0xf ) {
+        if ( $opt->{count} ) {
+            printf "%x%x ", $a, $b;
+        } elsif ( $opt->{2} ) {
+            printf "%02x ", $a * $b;
+        } else {
+            printf "%2x ", $a * $b;
+        }
+    }
+    print $/;
+}
+
