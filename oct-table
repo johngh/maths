@@ -1,0 +1,76 @@
+#!/usr/bin/perl
+#
+#
+#
+use warnings;
+use strict;
+use Getopt::Long;
+
+my $opt;
+
+GetOptions (
+    "zero"    => \$opt->{zero},
+    "2"       => \$opt->{2},
+    "count"   => \$opt->{count},
+    "colour"  => \$opt->{colour},
+    "help"    => \$opt->{usage},
+    "usage"   => \$opt->{usage},
+)
+or die("\$0: ERROR: invalid command line arguments\n");
+
+sub usage () {
+
+    die <<EOT;
+Usage: \$0 [-usage] [-verbose] ARGUMENT
+  where
+    -zero    - start at 0 instead of 1
+    -2       - 2 digits with leading 0 instead of space
+    -count   - count in hex instead of times table
+    -colour  - colour in the numbers based on last digit
+    -help    - show this help
+    -verbose - show verbose output
+EOT
+
+}
+usage if $opt->{usage};
+
+my $start = 1;
+$start = 0 if $opt->{zero};
+$start = 0 if $opt->{count};
+
+my %esc = (
+   0 => '44',
+   1 => '33',
+   2 => '31',
+   3 => '91',
+   4 => '93',
+   5 => '92',
+   6 => '94',
+   7 => '95',
+   8 => '2',
+   9 => '1',
+   10 => '7',
+   11 => '43',
+   12 => '41',
+   13 => '101',
+   14 => '103;30',
+   15 => '102',
+);
+
+for my $a ( $start .. 8 ) {
+    for my $b ( $start .. 8 ) {
+        if ( $opt->{count} ) {
+            printf "%o%o ", $a, $b;
+        } elsif ( $opt->{2} ) {
+            printf "%02o ", $a * $b;
+        } elsif ( $opt->{colour} ) {
+            my $c = $a * $b;
+            my $d = $c % 16;
+            printf "\e[%sm%2o\e[0m ", $esc{$d}, $c;
+        } else {
+            printf "%2o ", $a * $b;
+        }
+    }
+    print $/;
+}
+
