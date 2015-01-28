@@ -57,8 +57,8 @@ my %esc = (
    15 => '102',
 );
 
-for my $a ( $start .. 0xf ) {
-    for my $b ( $start .. 0xf ) {
+for my $a ( $start .. 16 ) {
+    for my $b ( $start .. 16 ) {
         if ( $opt->{count} ) {
             printf "%x%x ", $a, $b;
         } elsif ( $opt->{2} ) {
