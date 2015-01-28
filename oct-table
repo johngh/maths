@@ -11,7 +11,7 @@ my $opt;
 GetOptions (
     "zero"    => \$opt->{zero},
     "2"       => \$opt->{2},
-    "count"   => \$opt->{count},
+    "number"  => \$opt->{number},
     "colour"  => \$opt->{colour},
     "help"    => \$opt->{usage},
     "usage"   => \$opt->{usage},
@@ -25,7 +25,7 @@ Usage: \$0 [-usage] [-verbose] ARGUMENT
   where
     -zero    - start at 0 instead of 1
     -2       - 2 digits with leading 0 instead of space
-    -count   - count in hex instead of times table
+    -number  - count in octal instead of times table
     -colour  - colour in the numbers based on last digit
     -help    - show this help
     -verbose - show verbose output
@@ -36,7 +36,7 @@ usage if $opt->{usage};
 
 my $start = 1;
 $start = 0 if $opt->{zero};
-$start = 0 if $opt->{count};
+$start = 0 if $opt->{number};
 
 my %esc = (
    0 => '44',
@@ -59,7 +59,7 @@ my %esc = (
 
 for my $a ( $start .. 8 ) {
     for my $b ( $start .. 8 ) {
-        if ( $opt->{count} ) {
+        if ( $opt->{number} ) {
             printf "%o%o ", $a, $b;
         } elsif ( $opt->{2} ) {
             printf "%02o ", $a * $b;
