@@ -39,7 +39,7 @@ $start = 0 if $opt->{zero};
 $start = 0 if $opt->{number};
 
 my %esc = (
-   0 => '44',
+   0 => '2',
    1 => '33',
    2 => '31',
    3 => '91',
