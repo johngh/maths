@@ -43,22 +43,26 @@ for my $i ( 1 .. 7 ) {
 }
 
 my $height = $pa_h / 32;
-for my $i ( 0 .. 7 ) {
+for my $i ( 1 .. 8 ) {
     my $x = $i * $width;
-    $x += $pa_xw;
-    my $a = $i+1;
-    my $a1 = $i+9;
+    $x += $pa_xw-26;
+    my $a = $i;
+    my $a1 = $i+8;
     for my $j ( 1 .. 15 ) {
        my $b = $j+1;
        my $y = ( $pa_yn ) - ( $j * $height );
        my $y1 = ( $max_y / 2 ) - ( $j * $height );
-       my $fact = sprintf("%7s", "${a}x${b}=");
-       my $fact1 = sprintf("%7s", "${a1}x${b}=");
-       $p->text($x,$y1, "$fact1");
+       my $fact = "${a}x${b}=";
+       my $fact1 = "${a1}x${b}=";
+       $p->text({align => "right"},$x,$y1, $fact1);
        next if $a == 1;
-       $p->text($x,$y, "$fact");
+       $p->text({align => "right"},$x,$y, $fact);
     }
 }
+
+$p->setfont("Helvetica", 40);
+$p->setcolour("purple");
+$p->text({rotate => 90},$pa_xw+46,$max_y/2+10,"Ella's 16x Tables");
 
 # write the output to a file
 $p->output("16_times_table.ps");
