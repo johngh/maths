@@ -1,0 +1,840 @@
+%!PS-Adobe-3.0
+%%Title: (16_times_table.ps)
+%%LanguageLevel: 1
+%%Creator: PostScript::Simple perl module version 0.09
+%%CreationDate: Sun Feb 15 01:11:32 2015
+%%For: john
+%%DocumentMedia: A4 595.27559 841.88976 0 ( ) ( )
+%%Orientation: Portrait
+%%Pages: 1
+%%EndComments
+%%BeginProlog
+/ll 1 def systemdict /languagelevel known {
+/ll languagelevel def } if
+%%BeginResource: PostScript::Simple-REENCODEFONT
+/STARTDIFFENC { mark } bind def
+/ENDDIFFENC { 
+
+% /NewEnc BaseEnc STARTDIFFENC number or glyphname ... ENDDIFFENC -
+	counttomark 2 add -1 roll 256 array copy
+	/TempEncode exch def
+
+	% pointer for sequential encodings
+	/EncodePointer 0 def
+	{
+		% Get the bottom object
+		counttomark -1 roll
+		% Is it a mark?
+		dup type dup /marktype eq {
+			% End of encoding
+			pop pop exit
+		} {
+			/nametype eq {
+			% Insert the name at EncodePointer 
+
+			% and increment the pointer.
+			TempEncode EncodePointer 3 -1 roll put
+			/EncodePointer EncodePointer 1 add def
+			} {
+			% Set the EncodePointer to the number
+			/EncodePointer exch def
+			} ifelse
+		} ifelse
+	} loop
+
+	TempEncode def
+} bind def
+
+% Define ISO Latin1 encoding if it doesnt exist
+/ISOLatin1Encoding where {
+%	(ISOLatin1 exists!) =
+	pop
+} {
+	(ISOLatin1 does not exist, creating...) =
+	/ISOLatin1Encoding StandardEncoding STARTDIFFENC
+		144 /dotlessi /grave /acute /circumflex /tilde 
+		/macron /breve /dotaccent /dieresis /.notdef /ring 
+		/cedilla /.notdef /hungarumlaut /ogonek /caron /space 
+		/exclamdown /cent /sterling /currency /yen /brokenbar 
+		/section /dieresis /copyright /ordfeminine 
+		/guillemotleft /logicalnot /hyphen /registered 
+		/macron /degree /plusminus /twosuperior 
+		/threesuperior /acute /mu /paragraph /periodcentered 
+		/cedilla /onesuperior /ordmasculine /guillemotright 
+		/onequarter /onehalf /threequarters /questiondown 
+		/Agrave /Aacute /Acircumflex /Atilde /Adieresis 
+		/Aring /AE /Ccedilla /Egrave /Eacute /Ecircumflex 
+		/Edieresis /Igrave /Iacute /Icircumflex /Idieresis 
+		/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde 
+		/Odieresis /multiply /Oslash /Ugrave /Uacute 
+		/Ucircumflex /Udieresis /Yacute /Thorn /germandbls 
+		/agrave /aacute /acircumflex /atilde /adieresis 
+		/aring /ae /ccedilla /egrave /eacute /ecircumflex 
+		/edieresis /igrave /iacute /icircumflex /idieresis 
+		/eth /ntilde /ograve /oacute /ocircumflex /otilde 
+		/odieresis /divide /oslash /ugrave /uacute 
+		/ucircumflex /udieresis /yacute /thorn /ydieresis
+	ENDDIFFENC
+} ifelse
+
+% Name: Re-encode Font
+% Description: Creates a new font using the named encoding. 
+
+/REENCODEFONT { % /Newfont NewEncoding /Oldfont
+	findfont dup length 4 add dict
+	begin
+		{ % forall
+			1 index /FID ne 
+			2 index /UniqueID ne and
+			2 index /XUID ne and
+			{ def } { pop pop } ifelse
+		} forall
+		/Encoding exch def
+		% defs for DPS
+		/BitmapWidths false def
+		/ExactSize 0 def
+		/InBetweenSize 0 def
+		/TransformedChar 0 def
+		currentdict
+	end
+	definefont pop
+} bind def
+
+% Reencode the std fonts: 
+/Courier-iso ISOLatin1Encoding /Courier REENCODEFONT
+/Courier-Bold-iso ISOLatin1Encoding /Courier-Bold REENCODEFONT
+/Courier-BoldOblique-iso ISOLatin1Encoding /Courier-BoldOblique REENCODEFONT
+/Courier-Oblique-iso ISOLatin1Encoding /Courier-Oblique REENCODEFONT
+/Helvetica-iso ISOLatin1Encoding /Helvetica REENCODEFONT
+/Helvetica-Bold-iso ISOLatin1Encoding /Helvetica-Bold REENCODEFONT
+/Helvetica-BoldOblique-iso ISOLatin1Encoding /Helvetica-BoldOblique REENCODEFONT
+/Helvetica-Oblique-iso ISOLatin1Encoding /Helvetica-Oblique REENCODEFONT
+/Times-Roman-iso ISOLatin1Encoding /Times-Roman REENCODEFONT
+/Times-Bold-iso ISOLatin1Encoding /Times-Bold REENCODEFONT
+/Times-BoldItalic-iso ISOLatin1Encoding /Times-BoldItalic REENCODEFONT
+/Times-Italic-iso ISOLatin1Encoding /Times-Italic REENCODEFONT
+/Symbol-iso ISOLatin1Encoding /Symbol REENCODEFONT
+%%EndResource
+%%BeginResource: PostScript::Simple-box
+/box {
+  newpath 3 copy pop exch 4 copy pop pop
+  8 copy pop pop pop pop exch pop exch
+  3 copy pop pop exch moveto lineto
+  lineto lineto pop pop pop pop closepath
+} bind def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+/upt {72 mul 72.27 div} def
+ll 2 ge { << /PageSize [ 595.27559 841.88976 ] /ImagingBBox null >> setpagedevice } if
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+/pagelevel save def
+%%EndPageSetup
+0.01 upt setlinewidth
+57.5 upt 71 upt 539.5 upt 771 upt box stroke
+newpath
+57.5 upt 422.5 upt moveto
+539.5 upt 422.5 upt lineto stroke
+/Helvetica findfont 10 scalefont setfont
+newpath
+117.75 upt 71 upt moveto
+117.75 upt 771 upt lineto stroke
+newpath
+178 upt 71 upt moveto
+178 upt 771 upt lineto stroke
+newpath
+238.25 upt 71 upt moveto
+238.25 upt 771 upt lineto stroke
+newpath
+298.5 upt 71 upt moveto
+298.5 upt 771 upt lineto stroke
+newpath
+358.75 upt 71 upt moveto
+358.75 upt 771 upt lineto stroke
+newpath
+419 upt 71 upt moveto
+419 upt 771 upt lineto stroke
+newpath
+479.25 upt 71 upt moveto
+479.25 upt 771 upt lineto stroke
+newpath
+57.5 upt 400.625 upt moveto
+(   9x2=)   show stroke 
+newpath
+57.5 upt 378.75 upt moveto
+(   9x3=)   show stroke 
+newpath
+57.5 upt 356.875 upt moveto
+(   9x4=)   show stroke 
+newpath
+57.5 upt 335 upt moveto
+(   9x5=)   show stroke 
+newpath
+57.5 upt 313.125 upt moveto
+(   9x6=)   show stroke 
+newpath
+57.5 upt 291.25 upt moveto
+(   9x7=)   show stroke 
+newpath
+57.5 upt 269.375 upt moveto
+(   9x8=)   show stroke 
+newpath
+57.5 upt 247.5 upt moveto
+(   9x9=)   show stroke 
+newpath
+57.5 upt 225.625 upt moveto
+(  9x10=)   show stroke 
+newpath
+57.5 upt 203.75 upt moveto
+(  9x11=)   show stroke 
+newpath
+57.5 upt 181.875 upt moveto
+(  9x12=)   show stroke 
+newpath
+57.5 upt 160 upt moveto
+(  9x13=)   show stroke 
+newpath
+57.5 upt 138.125 upt moveto
+(  9x14=)   show stroke 
+newpath
+57.5 upt 116.25 upt moveto
+(  9x15=)   show stroke 
+newpath
+57.5 upt 94.375 upt moveto
+(  9x16=)   show stroke 
+newpath
+117.75 upt 400.625 upt moveto
+(  10x2=)   show stroke 
+newpath
+117.75 upt 749.125 upt moveto
+(   2x2=)   show stroke 
+newpath
+117.75 upt 378.75 upt moveto
+(  10x3=)   show stroke 
+newpath
+117.75 upt 727.25 upt moveto
+(   2x3=)   show stroke 
+newpath
+117.75 upt 356.875 upt moveto
+(  10x4=)   show stroke 
+newpath
+117.75 upt 705.375 upt moveto
+(   2x4=)   show stroke 
+newpath
+117.75 upt 335 upt moveto
+(  10x5=)   show stroke 
+newpath
+117.75 upt 683.5 upt moveto
+(   2x5=)   show stroke 
+newpath
+117.75 upt 313.125 upt moveto
+(  10x6=)   show stroke 
+newpath
+117.75 upt 661.625 upt moveto
+(   2x6=)   show stroke 
+newpath
+117.75 upt 291.25 upt moveto
+(  10x7=)   show stroke 
+newpath
+117.75 upt 639.75 upt moveto
+(   2x7=)   show stroke 
+newpath
+117.75 upt 269.375 upt moveto
+(  10x8=)   show stroke 
+newpath
+117.75 upt 617.875 upt moveto
+(   2x8=)   show stroke 
+newpath
+117.75 upt 247.5 upt moveto
+(  10x9=)   show stroke 
+newpath
+117.75 upt 596 upt moveto
+(   2x9=)   show stroke 
+newpath
+117.75 upt 225.625 upt moveto
+( 10x10=)   show stroke 
+newpath
+117.75 upt 574.125 upt moveto
+(  2x10=)   show stroke 
+newpath
+117.75 upt 203.75 upt moveto
+( 10x11=)   show stroke 
+newpath
+117.75 upt 552.25 upt moveto
+(  2x11=)   show stroke 
+newpath
+117.75 upt 181.875 upt moveto
+( 10x12=)   show stroke 
+newpath
+117.75 upt 530.375 upt moveto
+(  2x12=)   show stroke 
+newpath
+117.75 upt 160 upt moveto
+( 10x13=)   show stroke 
+newpath
+117.75 upt 508.5 upt moveto
+(  2x13=)   show stroke 
+newpath
+117.75 upt 138.125 upt moveto
+( 10x14=)   show stroke 
+newpath
+117.75 upt 486.625 upt moveto
+(  2x14=)   show stroke 
+newpath
+117.75 upt 116.25 upt moveto
+( 10x15=)   show stroke 
+newpath
+117.75 upt 464.75 upt moveto
+(  2x15=)   show stroke 
+newpath
+117.75 upt 94.375 upt moveto
+( 10x16=)   show stroke 
+newpath
+117.75 upt 442.875 upt moveto
+(  2x16=)   show stroke 
+newpath
+178 upt 400.625 upt moveto
+(  11x2=)   show stroke 
+newpath
+178 upt 749.125 upt moveto
+(   3x2=)   show stroke 
+newpath
+178 upt 378.75 upt moveto
+(  11x3=)   show stroke 
+newpath
+178 upt 727.25 upt moveto
+(   3x3=)   show stroke 
+newpath
+178 upt 356.875 upt moveto
+(  11x4=)   show stroke 
+newpath
+178 upt 705.375 upt moveto
+(   3x4=)   show stroke 
+newpath
+178 upt 335 upt moveto
+(  11x5=)   show stroke 
+newpath
+178 upt 683.5 upt moveto
+(   3x5=)   show stroke 
+newpath
+178 upt 313.125 upt moveto
+(  11x6=)   show stroke 
+newpath
+178 upt 661.625 upt moveto
+(   3x6=)   show stroke 
+newpath
+178 upt 291.25 upt moveto
+(  11x7=)   show stroke 
+newpath
+178 upt 639.75 upt moveto
+(   3x7=)   show stroke 
+newpath
+178 upt 269.375 upt moveto
+(  11x8=)   show stroke 
+newpath
+178 upt 617.875 upt moveto
+(   3x8=)   show stroke 
+newpath
+178 upt 247.5 upt moveto
+(  11x9=)   show stroke 
+newpath
+178 upt 596 upt moveto
+(   3x9=)   show stroke 
+newpath
+178 upt 225.625 upt moveto
+( 11x10=)   show stroke 
+newpath
+178 upt 574.125 upt moveto
+(  3x10=)   show stroke 
+newpath
+178 upt 203.75 upt moveto
+( 11x11=)   show stroke 
+newpath
+178 upt 552.25 upt moveto
+(  3x11=)   show stroke 
+newpath
+178 upt 181.875 upt moveto
+( 11x12=)   show stroke 
+newpath
+178 upt 530.375 upt moveto
+(  3x12=)   show stroke 
+newpath
+178 upt 160 upt moveto
+( 11x13=)   show stroke 
+newpath
+178 upt 508.5 upt moveto
+(  3x13=)   show stroke 
+newpath
+178 upt 138.125 upt moveto
+( 11x14=)   show stroke 
+newpath
+178 upt 486.625 upt moveto
+(  3x14=)   show stroke 
+newpath
+178 upt 116.25 upt moveto
+( 11x15=)   show stroke 
+newpath
+178 upt 464.75 upt moveto
+(  3x15=)   show stroke 
+newpath
+178 upt 94.375 upt moveto
+( 11x16=)   show stroke 
+newpath
+178 upt 442.875 upt moveto
+(  3x16=)   show stroke 
+newpath
+238.25 upt 400.625 upt moveto
+(  12x2=)   show stroke 
+newpath
+238.25 upt 749.125 upt moveto
+(   4x2=)   show stroke 
+newpath
+238.25 upt 378.75 upt moveto
+(  12x3=)   show stroke 
+newpath
+238.25 upt 727.25 upt moveto
+(   4x3=)   show stroke 
+newpath
+238.25 upt 356.875 upt moveto
+(  12x4=)   show stroke 
+newpath
+238.25 upt 705.375 upt moveto
+(   4x4=)   show stroke 
+newpath
+238.25 upt 335 upt moveto
+(  12x5=)   show stroke 
+newpath
+238.25 upt 683.5 upt moveto
+(   4x5=)   show stroke 
+newpath
+238.25 upt 313.125 upt moveto
+(  12x6=)   show stroke 
+newpath
+238.25 upt 661.625 upt moveto
+(   4x6=)   show stroke 
+newpath
+238.25 upt 291.25 upt moveto
+(  12x7=)   show stroke 
+newpath
+238.25 upt 639.75 upt moveto
+(   4x7=)   show stroke 
+newpath
+238.25 upt 269.375 upt moveto
+(  12x8=)   show stroke 
+newpath
+238.25 upt 617.875 upt moveto
+(   4x8=)   show stroke 
+newpath
+238.25 upt 247.5 upt moveto
+(  12x9=)   show stroke 
+newpath
+238.25 upt 596 upt moveto
+(   4x9=)   show stroke 
+newpath
+238.25 upt 225.625 upt moveto
+( 12x10=)   show stroke 
+newpath
+238.25 upt 574.125 upt moveto
+(  4x10=)   show stroke 
+newpath
+238.25 upt 203.75 upt moveto
+( 12x11=)   show stroke 
+newpath
+238.25 upt 552.25 upt moveto
+(  4x11=)   show stroke 
+newpath
+238.25 upt 181.875 upt moveto
+( 12x12=)   show stroke 
+newpath
+238.25 upt 530.375 upt moveto
+(  4x12=)   show stroke 
+newpath
+238.25 upt 160 upt moveto
+( 12x13=)   show stroke 
+newpath
+238.25 upt 508.5 upt moveto
+(  4x13=)   show stroke 
+newpath
+238.25 upt 138.125 upt moveto
+( 12x14=)   show stroke 
+newpath
+238.25 upt 486.625 upt moveto
+(  4x14=)   show stroke 
+newpath
+238.25 upt 116.25 upt moveto
+( 12x15=)   show stroke 
+newpath
+238.25 upt 464.75 upt moveto
+(  4x15=)   show stroke 
+newpath
+238.25 upt 94.375 upt moveto
+( 12x16=)   show stroke 
+newpath
+238.25 upt 442.875 upt moveto
+(  4x16=)   show stroke 
+newpath
+298.5 upt 400.625 upt moveto
+(  13x2=)   show stroke 
+newpath
+298.5 upt 749.125 upt moveto
+(   5x2=)   show stroke 
+newpath
+298.5 upt 378.75 upt moveto
+(  13x3=)   show stroke 
+newpath
+298.5 upt 727.25 upt moveto
+(   5x3=)   show stroke 
+newpath
+298.5 upt 356.875 upt moveto
+(  13x4=)   show stroke 
+newpath
+298.5 upt 705.375 upt moveto
+(   5x4=)   show stroke 
+newpath
+298.5 upt 335 upt moveto
+(  13x5=)   show stroke 
+newpath
+298.5 upt 683.5 upt moveto
+(   5x5=)   show stroke 
+newpath
+298.5 upt 313.125 upt moveto
+(  13x6=)   show stroke 
+newpath
+298.5 upt 661.625 upt moveto
+(   5x6=)   show stroke 
+newpath
+298.5 upt 291.25 upt moveto
+(  13x7=)   show stroke 
+newpath
+298.5 upt 639.75 upt moveto
+(   5x7=)   show stroke 
+newpath
+298.5 upt 269.375 upt moveto
+(  13x8=)   show stroke 
+newpath
+298.5 upt 617.875 upt moveto
+(   5x8=)   show stroke 
+newpath
+298.5 upt 247.5 upt moveto
+(  13x9=)   show stroke 
+newpath
+298.5 upt 596 upt moveto
+(   5x9=)   show stroke 
+newpath
+298.5 upt 225.625 upt moveto
+( 13x10=)   show stroke 
+newpath
+298.5 upt 574.125 upt moveto
+(  5x10=)   show stroke 
+newpath
+298.5 upt 203.75 upt moveto
+( 13x11=)   show stroke 
+newpath
+298.5 upt 552.25 upt moveto
+(  5x11=)   show stroke 
+newpath
+298.5 upt 181.875 upt moveto
+( 13x12=)   show stroke 
+newpath
+298.5 upt 530.375 upt moveto
+(  5x12=)   show stroke 
+newpath
+298.5 upt 160 upt moveto
+( 13x13=)   show stroke 
+newpath
+298.5 upt 508.5 upt moveto
+(  5x13=)   show stroke 
+newpath
+298.5 upt 138.125 upt moveto
+( 13x14=)   show stroke 
+newpath
+298.5 upt 486.625 upt moveto
+(  5x14=)   show stroke 
+newpath
+298.5 upt 116.25 upt moveto
+( 13x15=)   show stroke 
+newpath
+298.5 upt 464.75 upt moveto
+(  5x15=)   show stroke 
+newpath
+298.5 upt 94.375 upt moveto
+( 13x16=)   show stroke 
+newpath
+298.5 upt 442.875 upt moveto
+(  5x16=)   show stroke 
+newpath
+358.75 upt 400.625 upt moveto
+(  14x2=)   show stroke 
+newpath
+358.75 upt 749.125 upt moveto
+(   6x2=)   show stroke 
+newpath
+358.75 upt 378.75 upt moveto
+(  14x3=)   show stroke 
+newpath
+358.75 upt 727.25 upt moveto
+(   6x3=)   show stroke 
+newpath
+358.75 upt 356.875 upt moveto
+(  14x4=)   show stroke 
+newpath
+358.75 upt 705.375 upt moveto
+(   6x4=)   show stroke 
+newpath
+358.75 upt 335 upt moveto
+(  14x5=)   show stroke 
+newpath
+358.75 upt 683.5 upt moveto
+(   6x5=)   show stroke 
+newpath
+358.75 upt 313.125 upt moveto
+(  14x6=)   show stroke 
+newpath
+358.75 upt 661.625 upt moveto
+(   6x6=)   show stroke 
+newpath
+358.75 upt 291.25 upt moveto
+(  14x7=)   show stroke 
+newpath
+358.75 upt 639.75 upt moveto
+(   6x7=)   show stroke 
+newpath
+358.75 upt 269.375 upt moveto
+(  14x8=)   show stroke 
+newpath
+358.75 upt 617.875 upt moveto
+(   6x8=)   show stroke 
+newpath
+358.75 upt 247.5 upt moveto
+(  14x9=)   show stroke 
+newpath
+358.75 upt 596 upt moveto
+(   6x9=)   show stroke 
+newpath
+358.75 upt 225.625 upt moveto
+( 14x10=)   show stroke 
+newpath
+358.75 upt 574.125 upt moveto
+(  6x10=)   show stroke 
+newpath
+358.75 upt 203.75 upt moveto
+( 14x11=)   show stroke 
+newpath
+358.75 upt 552.25 upt moveto
+(  6x11=)   show stroke 
+newpath
+358.75 upt 181.875 upt moveto
+( 14x12=)   show stroke 
+newpath
+358.75 upt 530.375 upt moveto
+(  6x12=)   show stroke 
+newpath
+358.75 upt 160 upt moveto
+( 14x13=)   show stroke 
+newpath
+358.75 upt 508.5 upt moveto
+(  6x13=)   show stroke 
+newpath
+358.75 upt 138.125 upt moveto
+( 14x14=)   show stroke 
+newpath
+358.75 upt 486.625 upt moveto
+(  6x14=)   show stroke 
+newpath
+358.75 upt 116.25 upt moveto
+( 14x15=)   show stroke 
+newpath
+358.75 upt 464.75 upt moveto
+(  6x15=)   show stroke 
+newpath
+358.75 upt 94.375 upt moveto
+( 14x16=)   show stroke 
+newpath
+358.75 upt 442.875 upt moveto
+(  6x16=)   show stroke 
+newpath
+419 upt 400.625 upt moveto
+(  15x2=)   show stroke 
+newpath
+419 upt 749.125 upt moveto
+(   7x2=)   show stroke 
+newpath
+419 upt 378.75 upt moveto
+(  15x3=)   show stroke 
+newpath
+419 upt 727.25 upt moveto
+(   7x3=)   show stroke 
+newpath
+419 upt 356.875 upt moveto
+(  15x4=)   show stroke 
+newpath
+419 upt 705.375 upt moveto
+(   7x4=)   show stroke 
+newpath
+419 upt 335 upt moveto
+(  15x5=)   show stroke 
+newpath
+419 upt 683.5 upt moveto
+(   7x5=)   show stroke 
+newpath
+419 upt 313.125 upt moveto
+(  15x6=)   show stroke 
+newpath
+419 upt 661.625 upt moveto
+(   7x6=)   show stroke 
+newpath
+419 upt 291.25 upt moveto
+(  15x7=)   show stroke 
+newpath
+419 upt 639.75 upt moveto
+(   7x7=)   show stroke 
+newpath
+419 upt 269.375 upt moveto
+(  15x8=)   show stroke 
+newpath
+419 upt 617.875 upt moveto
+(   7x8=)   show stroke 
+newpath
+419 upt 247.5 upt moveto
+(  15x9=)   show stroke 
+newpath
+419 upt 596 upt moveto
+(   7x9=)   show stroke 
+newpath
+419 upt 225.625 upt moveto
+( 15x10=)   show stroke 
+newpath
+419 upt 574.125 upt moveto
+(  7x10=)   show stroke 
+newpath
+419 upt 203.75 upt moveto
+( 15x11=)   show stroke 
+newpath
+419 upt 552.25 upt moveto
+(  7x11=)   show stroke 
+newpath
+419 upt 181.875 upt moveto
+( 15x12=)   show stroke 
+newpath
+419 upt 530.375 upt moveto
+(  7x12=)   show stroke 
+newpath
+419 upt 160 upt moveto
+( 15x13=)   show stroke 
+newpath
+419 upt 508.5 upt moveto
+(  7x13=)   show stroke 
+newpath
+419 upt 138.125 upt moveto
+( 15x14=)   show stroke 
+newpath
+419 upt 486.625 upt moveto
+(  7x14=)   show stroke 
+newpath
+419 upt 116.25 upt moveto
+( 15x15=)   show stroke 
+newpath
+419 upt 464.75 upt moveto
+(  7x15=)   show stroke 
+newpath
+419 upt 94.375 upt moveto
+( 15x16=)   show stroke 
+newpath
+419 upt 442.875 upt moveto
+(  7x16=)   show stroke 
+newpath
+479.25 upt 400.625 upt moveto
+(  16x2=)   show stroke 
+newpath
+479.25 upt 749.125 upt moveto
+(   8x2=)   show stroke 
+newpath
+479.25 upt 378.75 upt moveto
+(  16x3=)   show stroke 
+newpath
+479.25 upt 727.25 upt moveto
+(   8x3=)   show stroke 
+newpath
+479.25 upt 356.875 upt moveto
+(  16x4=)   show stroke 
+newpath
+479.25 upt 705.375 upt moveto
+(   8x4=)   show stroke 
+newpath
+479.25 upt 335 upt moveto
+(  16x5=)   show stroke 
+newpath
+479.25 upt 683.5 upt moveto
+(   8x5=)   show stroke 
+newpath
+479.25 upt 313.125 upt moveto
+(  16x6=)   show stroke 
+newpath
+479.25 upt 661.625 upt moveto
+(   8x6=)   show stroke 
+newpath
+479.25 upt 291.25 upt moveto
+(  16x7=)   show stroke 
+newpath
+479.25 upt 639.75 upt moveto
+(   8x7=)   show stroke 
+newpath
+479.25 upt 269.375 upt moveto
+(  16x8=)   show stroke 
+newpath
+479.25 upt 617.875 upt moveto
+(   8x8=)   show stroke 
+newpath
+479.25 upt 247.5 upt moveto
+(  16x9=)   show stroke 
+newpath
+479.25 upt 596 upt moveto
+(   8x9=)   show stroke 
+newpath
+479.25 upt 225.625 upt moveto
+( 16x10=)   show stroke 
+newpath
+479.25 upt 574.125 upt moveto
+(  8x10=)   show stroke 
+newpath
+479.25 upt 203.75 upt moveto
+( 16x11=)   show stroke 
+newpath
+479.25 upt 552.25 upt moveto
+(  8x11=)   show stroke 
+newpath
+479.25 upt 181.875 upt moveto
+( 16x12=)   show stroke 
+newpath
+479.25 upt 530.375 upt moveto
+(  8x12=)   show stroke 
+newpath
+479.25 upt 160 upt moveto
+( 16x13=)   show stroke 
+newpath
+479.25 upt 508.5 upt moveto
+(  8x13=)   show stroke 
+newpath
+479.25 upt 138.125 upt moveto
+( 16x14=)   show stroke 
+newpath
+479.25 upt 486.625 upt moveto
+(  8x14=)   show stroke 
+newpath
+479.25 upt 116.25 upt moveto
+( 16x15=)   show stroke 
+newpath
+479.25 upt 464.75 upt moveto
+(  8x15=)   show stroke 
+newpath
+479.25 upt 94.375 upt moveto
+( 16x16=)   show stroke 
+newpath
+479.25 upt 442.875 upt moveto
+(  8x16=)   show stroke 
+%%PageTrailer
+pagelevel restore
+showpage
+%%EOF

@@ -1,0 +1,66 @@
+#!/usr/bin/perl
+#
+#
+#
+use warnings;
+use strict;
+
+use PostScript::Simple;
+    
+# create a new PostScript object
+my $p = new PostScript::Simple(papersize => "A4",
+                            colour => 1,
+                            eps => 0,
+                            units => "pt");
+# 595 pt x 842 pt
+my ($max_x, $max_y) = ( 597, 845 );
+
+# The dimensions of A4 is 210 x 297mm
+# When usual and recommended printing margins are put
+# the printable size of A4 is 170 x 247 mm.
+# = 482 x 700 pt
+my ($pa_w, $pa_h) = (482, 700);
+my ($pa_xw, $pa_xe, $pa_ys, $pa_yn) = (57.5, 539.5, 71, 771);
+
+# create a new page
+$p->newpage;
+
+# draw a border
+$p->setlinewidth( 0.01 );
+$p->box($pa_xw, $pa_ys, $pa_xe, $pa_yn);
+
+# draw some lines and other shapes
+$p->line($pa_xw,$max_y/2, $pa_xe,$max_y/2);
+# $p->linextend(298.5,124);
+
+# $p->setcolour("red");
+$p->setfont("Helvetica", 10);
+my $width = $pa_w / 8;
+for my $i ( 1 .. 7 ) {
+    my $x = $i * $width;
+    $x += $pa_xw;
+    $p->line($x,$pa_ys, $x,$pa_yn);
+}
+
+my $height = $pa_h / 32;
+for my $i ( 0 .. 7 ) {
+    my $x = $i * $width;
+    $x += $pa_xw;
+    my $a = $i+1;
+    my $a1 = $i+9;
+    for my $j ( 1 .. 15 ) {
+       my $b = $j+1;
+       my $y = ( $pa_yn ) - ( $j * $height );
+       my $y1 = ( $max_y / 2 ) - ( $j * $height );
+       my $fact = sprintf("%7s", "${a}x${b}=");
+       my $fact1 = sprintf("%7s", "${a1}x${b}=");
+       $p->text($x,$y1, "$fact1");
+       next if $a == 1;
+       $p->text($x,$y, "$fact");
+    }
+}
+
+# write the output to a file
+$p->output("16_times_table.ps");
+
+
