@@ -1,0 +1,87 @@
+#!/usr/bin/perl
+#
+#
+#
+use warnings;
+use strict;
+
+use PostScript::Simple;
+    
+# create a new PostScript object
+my $p = new PostScript::Simple(papersize => "A4",
+                            colour => 1,
+                            eps => 0,
+                            units => "pt");
+# 595 pt x 842 pt
+my ($max_x, $max_y) = ( 597, 845 );
+
+# The dimensions of A4 is 210 x 297mm
+# When usual and recommended printing margins are put
+# the printable size of A4 is 170 x 247 mm.
+# = 482 x 700 pt
+my ($pa_w, $pa_h) = (482, 700);
+my ($pa_xw, $pa_xe, $pa_ys, $pa_yn) = (57.5, 539.5, 71, 771);
+
+# create a new page
+$p->newpage;
+
+# draw a border
+$p->setlinewidth( 0.01 );
+$p->box($pa_xw, $pa_ys, $pa_xe, $pa_yn);
+
+# draw some lines and other shapes
+$p->line($pa_xw,$max_y/2, $pa_xe,$max_y/2);
+# $p->linextend(298.5,124);
+
+# $p->setcolour("red");
+$p->setfont("Helvetica", 10);
+
+# Draw vertical grid
+my $width = $pa_w / 8;
+for my $i ( 1 .. 7 ) {
+    my $x = $i * $width;
+    $x += $pa_xw;
+    $p->line($x,$pa_ys, $x,$pa_yn);
+}
+
+my (@tab);
+
+for my $a ( 2 .. 16 ) {
+
+    for my $b ( 2 .. 16 ) {
+
+        push @tab, sprintf "${a}x${b}=";
+
+    }
+
+}
+
+my $height = $pa_h / 32;
+for my $i ( 1 .. 8 ) {
+    my $x = $i * $width;
+    $x += $pa_xw-26;
+    my $a = $i;
+    my $a1 = $i+8;
+    for my $j ( 1 .. 15 ) {
+       # my $b = $j+1;
+       my $y = ( $pa_yn ) - ( $j * $height );
+       my $y1 = ( $max_y / 2 ) - ( $j * $height );
+       # my $fact = "${a}x${b}=";
+       # my $fact1 = "${a1}x${b}=";
+       my $fact1 = sprintf "%s", splice @tab, int(rand($#tab+1)), 1;
+       $p->text({align => "right"},$x,$y1, $fact1);
+       next if $a == 1;
+       my $fact = sprintf "%s", splice @tab, int(rand($#tab+1)), 1;
+       $p->text({align => "right"},$x,$y, $fact);
+    }
+}
+
+$p->setfont("Helvetica", 40);
+$p->setcolour("purple");
+$p->text({rotate => 90},$pa_xw+46,$max_y/2+4,"Random 16x Table");
+
+# write the output to a file
+my $now = time;
+$p->output("16_x_table_random.$now.ps");
+
+
